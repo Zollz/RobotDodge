@@ -1,0 +1,2 @@
+(13/28/2017) WARN  -> Unable to locate file for Player (C:\users\eddie\documents\github\robotdodge\Resources\images\/resources/images/player.png) [C:/Users/acain/Documents/Code/splashkit/coresdk/src/coresdk/images.cpp:88]
+(13/28/2017) WARN  -> Error trying to draw bitmap: passed in bmp is an invalid bitmap pointer. [C:/Users/acain/Documents/Code/splashkit/coresdk/src/coresdk/images.cpp:212]
