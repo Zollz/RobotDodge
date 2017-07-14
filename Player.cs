@@ -3,33 +3,28 @@ using SplashKitSDK;
 
 public class Player
 {
-	private Bitmap _PlayerBitmap;
+    private Bitmap _PlayerBitmap;
+    public double _x { get; private set; }
+    public double _y { get; private set; }
 
-	public double X 
-	{ 
-		get; private set;
-	}
 
-	public double Y
-	{
-		get; private set;
-	}
-
-	public int Width
+    public int Width
     {
-		get { return _PlayerBitmap.Width; }
+        get
+        {
+            return _PlayerBitmap.Width;
+        }
     }
 
-	public Player(double X, double Y)	
-	{
-		Bitmap _PlayerBitmap = new Bitmap("Player", "resources/images/player.png");
-	    Window gameWindow;
-        gameWindow = new Window("Robot Dodge", 700, 700);
-		X = (gameWindow.Width - Width) / 2;
-	}
+    public Player(double x, double y)
+    {
+        _PlayerBitmap = new Bitmap("Player", "player.png");
+        _x = x;
+        _y = y;
+    }                    
 
-	public void Draw()
-	{
-		SplashKit.DrawBitmap("Player", X, Y);
-	}
+    public void Draw()
+    {
+        SplashKit.DrawBitmap(_PlayerBitmap, _x, _y);
+    }
 }

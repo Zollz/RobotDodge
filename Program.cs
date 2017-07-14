@@ -5,12 +5,13 @@ public class Program
 {
     public static void Main()
     {
-    Window gameWindow;
-	gameWindow = new Window("Robot Dodge", 700, 700);
-    Bitmap _PlayerBitmap = new Bitmap("Player", "resources/images/player.png");
-    gameWindow.Clear(Color.White);
-    gameWindow.DrawBitmap(_PlayerBitmap, 300, 300);
-    gameWindow.Refresh(60);
-    SplashKit.Delay(10000);
+        Player newPlayer = new Player(50, 50);
+        Window gameWindow = new Window("Robot Dodge", 200, 200);
+
+        
+        gameWindow.Clear(Color.White);
+        newPlayer.Draw();
+        gameWindow.Refresh(60);
+        SplashKit.Delay(5000);
     }
 }
