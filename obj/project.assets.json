@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eddie\\Documents\\GitHub\\RobotDodge\\robotdodge.csproj",
+      "projectUniqueName": "C:\\Users\\Eddie\\Documents\\Coding\\RobotDodge\\robotdodge.csproj",
       "projectName": "robotdodge",
-      "projectPath": "C:\\Users\\Eddie\\Documents\\GitHub\\RobotDodge\\robotdodge.csproj",
-      "outputPath": "C:\\Users\\Eddie\\Documents\\GitHub\\RobotDodge\\obj\\",
+      "projectPath": "C:\\Users\\Eddie\\Documents\\Coding\\RobotDodge\\robotdodge.csproj",
+      "outputPath": "C:\\Users\\Eddie\\Documents\\Coding\\RobotDodge\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
