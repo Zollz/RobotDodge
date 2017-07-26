@@ -8,6 +8,7 @@ public class Player
     private Bitmap _PlayerBitmap;
     public double X { get; private set; }
     public double Y { get; private set; }
+    public bool Quit { get; private set; }
     const int Speed = 5;
     const int GAP = 5;
     const int Boost = 20;
@@ -25,6 +26,7 @@ public class Player
     public Player(Window gameWindow) 
     {
         _PlayerBitmap = new Bitmap("Player", "resources/images/Player.png");
+        Quit = false;
         X = (gameWindow.Width - Width) / 2;
         Y = (gameWindow.Height - Height) / 2;
     }
@@ -70,9 +72,8 @@ public class Player
         }
         if (SplashKit.KeyTyped(KeyCode.EscapeKey))
         {
-            SplashKit.CloseCurrentWindow();
+            Quit = true;
         }
-
     }
 
     public void StayOnWindow(Window gameWindow)

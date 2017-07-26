@@ -5,19 +5,18 @@ public class Program
 {
     public static void Main()
     {
-               
-       Window gameWindow = new Window("Robot Dodge", 300, 300);
-       Player player = new Player(gameWindow);
 
+        Window gameWindow = new Window("Robot Dodge", 300, 300);
+        Player player = new Player(gameWindow);
+        RobotDodge robot = new RobotDodge(gameWindow, player);
 
-        while (! gameWindow.CloseRequested)
+        while ((!gameWindow.CloseRequested) && (!player.Quit))  
         {
             SplashKit.ProcessEvents();
-            gameWindow.Clear(Color.White);
-            player.Draw();
-            gameWindow.Refresh(60);
-            player.HandleMethod();
-            player.StayOnWindow(gameWindow);
+            robot.HandleInput();
+            robot.Update();
+            robot.Draw();
+            robot.RandomRobot();
         }
 
     }

@@ -1,12 +1,3 @@
-C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.deps.json
-C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.runtimeconfig.json
-C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.runtimeconfig.dev.json
-C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.AssemblyInfo.cs
-C:\users\eddie\documents\github\robotdodge\bin\Debug\netcoreapp1.1\robotdodge.dll
-C:\users\eddie\documents\github\robotdodge\bin\Debug\netcoreapp1.1\robotdodge.pdb
-C:\users\eddie\documents\github\robotdodge\obj\Debug\netcoreapp1.1\robotdodge.dll
-C:\users\eddie\documents\github\robotdodge\obj\Debug\netcoreapp1.1\robotdodge.pdb
-C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.csprojResolveAssemblyReference.cache
 C:\Users\Eddie\Documents\Code\Coding\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.deps.json
 C:\Users\Eddie\Documents\Code\Coding\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.runtimeconfig.json
 C:\Users\Eddie\Documents\Code\Coding\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.runtimeconfig.dev.json
@@ -23,3 +14,11 @@ C:\Users\Eddie\Documents\Coding\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.cs
 C:\Users\Eddie\Documents\Coding\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.AssemblyInfo.cs
 C:\Users\Eddie\Documents\Coding\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.dll
 C:\Users\Eddie\Documents\Coding\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.pdb
+C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.deps.json
+C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.runtimeconfig.json
+C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.runtimeconfig.dev.json
+C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.dll
+C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.pdb
+C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.AssemblyInfo.cs
+C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.dll
+C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.pdb
