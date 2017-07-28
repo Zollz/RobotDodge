@@ -22,3 +22,4 @@ C:\Users\Eddie\Documents\GitHub\RobotDodge\bin\Debug\netcoreapp1.1\robotdodge.pd
 C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.AssemblyInfo.cs
 C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.dll
 C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.pdb
+C:\Users\Eddie\Documents\GitHub\RobotDodge\obj\Debug\netcoreapp1.1\robotdodge.csprojResolveAssemblyReference.cache

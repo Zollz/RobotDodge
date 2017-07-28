@@ -7,15 +7,15 @@ class Robot
     private int X { get; set; }
     private int Y { get; set; }
     private Color MainColor { get; set; }
+    public int CollisionCircle { get {  return SplashKit.CircleAt()} }
     public int Width { get { return 50; } }
     public int Height { get { return 50; } }
-    public int CollisionCircle { get { return SplashKit.CircleAt(, 20); } }
 
     public Robot(Window gameWindow, Robot robot) 
     {
         X = SplashKit.Rnd(gameWindow.Width - Width);
         Y = SplashKit.Rnd(gameWindow.Height - Height);
-        robot.MainColor = Color.RandomRGB(200);
+        MainColor = Color.RandomRGB(200);
     }
 
     public void Draw()

@@ -17,7 +17,7 @@ class RobotDodge
     {
         _GameWindow = gameWindow;
         _Player = player;
-        
+        _TestRobot = RandomRobot();
     }
 
     public void HandleInput()
