@@ -14,8 +14,8 @@ public class Program
         {
             SplashKit.ProcessEvents();
             robot.HandleInput();
-            robot.Update();
             robot.Draw();
+            robot.Update();
             robot.RandomRobot();
         }
 
