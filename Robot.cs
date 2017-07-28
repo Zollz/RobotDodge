@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using SplashKitSDK;
-
-class Robot
+public class Robot
 {
     private int X { get; set; }
     private int Y { get; set; }
     private Color MainColor { get; set; }
     public int Width { get { return 50; } }
     public int Height { get { return 50; } }
-    public int CollisionCircle { get { return SplashKit.CircleAt(, 20); } }
-
-    public Robot(Window gameWindow, Robot robot) 
+    public Circle CollisionCircle { get; }
+  
+    public Robot(Window gameWindow) 
     {
         X = SplashKit.Rnd(gameWindow.Width - Width);
         Y = SplashKit.Rnd(gameWindow.Height - Height);
-        robot.MainColor = Color.RandomRGB(200);
+        MainColor = Color.RandomRGB(200);
+        CollisionCircle = SplashKit.CircleAt(X + (Width / 2), Y + (Height / 2), 20);
     }
 
     public void Draw()

@@ -95,4 +95,9 @@ public class Player
             Y = (gameWindow.Height - Height) - GAP;
         }
     }
+
+    public bool CollidedWidth(Robot other)
+    {
+        { return _PlayerBitmap.CircleCollision(X, Y, other.CollisionCircle); }
+    }
 }
