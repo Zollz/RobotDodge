@@ -8,15 +8,14 @@ public class Program
 
         Window gameWindow = new Window("Robot Dodge", 300, 300);
         Player player = new Player(gameWindow);
-        RobotDodge robot = new RobotDodge(gameWindow, player);
+        RobotDodge game = new RobotDodge(gameWindow, player);
 
         while ((!gameWindow.CloseRequested) && (!player.Quit))  
         {
             SplashKit.ProcessEvents();
-            robot.HandleInput();
-            robot.Draw();
-            robot.Update();
-            robot.RandomRobot();
+            game.HandleInput();
+            game.Draw();
+            game.Update();
         }
 
     }

@@ -40,11 +40,8 @@ class RobotDodge
                                   
     public void Update()
     {
-        if(_Player.CollidedWidth(_TestRobot))
-        {   
-            _TestRobot = RandomRobot();
-
-        }
+        if(_Player.CollidedWidth(_TestRobot)) 
+            _TestRobot = RandomRobot();  
     }
 }
 
