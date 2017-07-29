@@ -4,7 +4,7 @@ using SplashKitSDK;
 
 public class Player
 {
-    
+
     private Bitmap _PlayerBitmap;
     public double X { get; private set; }
     public double Y { get; private set; }
@@ -15,7 +15,7 @@ public class Player
 
     public int Width
     {
-        get { return _PlayerBitmap.Width; } 
+        get { return _PlayerBitmap.Width; }
     }
 
     public int Height
@@ -23,7 +23,7 @@ public class Player
         get { return _PlayerBitmap.Height; }
     }
 
-    public Player(Window gameWindow) 
+    public Player(Window gameWindow)
     {
         _PlayerBitmap = new Bitmap("Player", "resources/images/Player.png");
         Quit = false;
@@ -31,7 +31,7 @@ public class Player
         Y = (gameWindow.Height - Height) / 2;
     }
 
-    public void Draw() 
+    public void Draw()
     {
         SplashKit.DrawBitmap(_PlayerBitmap, X, Y);
     }

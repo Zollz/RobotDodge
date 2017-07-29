@@ -27,7 +27,7 @@ class RobotDodge
     }
     public Robot RandomRobot()
     {
-       return new Robot(_GameWindow);
+        return new Robot(_GameWindow);
     }
 
     public void Draw()
@@ -37,11 +37,11 @@ class RobotDodge
         _Player.Draw();
         _GameWindow.Refresh(60);
     }
-                                  
+
     public void Update()
     {
-        if(_Player.CollidedWidth(_TestRobot)) 
-            _TestRobot = RandomRobot();  
+        if (_Player.CollidedWidth(_TestRobot))
+            _TestRobot = RandomRobot();
     }
 }
 

@@ -10,7 +10,7 @@ public class Program
         Player player = new Player(gameWindow);
         RobotDodge game = new RobotDodge(gameWindow, player);
 
-        while ((!gameWindow.CloseRequested) && (!player.Quit))  
+        while ((!gameWindow.CloseRequested) && (!player.Quit))
         {
             SplashKit.ProcessEvents();
             game.HandleInput();
