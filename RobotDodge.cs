@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using SplashKitSDK;
 
 
-class RobotDodge
+public class RobotDodge
 {
     private Player _Player;
     private Window _GameWindow;
-    private Robot _TestRobot;
+    private Bitmap Life;
+    public double Score;
+    public int Lives = 5;
+    private static List<Robot> _Robot = new List<Robot>();
 
     public bool Quit
     {
@@ -17,7 +21,7 @@ class RobotDodge
     {
         _GameWindow = gameWindow;
         _Player = player;
-        _TestRobot = RandomRobot();
+        Life = new Bitmap("Life", "resources/images/heart.png");
     }
 
     public void HandleInput()
@@ -27,21 +31,95 @@ class RobotDodge
     }
     public Robot RandomRobot()
     {
-        return new Robot(_GameWindow);
+        return new Robot(_GameWindow, _Player);
     }
 
     public void Draw()
     {
         _GameWindow.Clear(Color.White);
-        _TestRobot.Draw();
+
+        foreach(Robot robot in _Robot)
+        {
+            robot.Draw();
+        }
+        if (Lives == 5)
+        {
+            SplashKit.DrawBitmap(Life, 550, 50);
+            SplashKit.DrawBitmap(Life, 500, 50);
+            SplashKit.DrawBitmap(Life, 450, 50);
+            SplashKit.DrawBitmap(Life, 400, 50);
+            SplashKit.DrawBitmap(Life, 350, 50);
+        }
+        if (Lives == 4)
+        {
+            SplashKit.DrawBitmap(Life, 550, 50);
+            SplashKit.DrawBitmap(Life, 500, 50);
+            SplashKit.DrawBitmap(Life, 450, 50);
+            SplashKit.DrawBitmap(Life, 400, 50);
+        }
+        if (Lives ==3)
+        {
+            SplashKit.DrawBitmap(Life, 550, 50);
+            SplashKit.DrawBitmap(Life, 500, 50);
+            SplashKit.DrawBitmap(Life, 450, 50);
+        }
+        if (Lives == 2)
+        {
+            SplashKit.DrawBitmap(Life, 550, 50);
+            SplashKit.DrawBitmap(Life, 500, 50);
+        }
+        if (Lives == 1)
+        {
+            SplashKit.DrawBitmap(Life, 550, 50);
+        }
+        Timer score = new Timer("Score");
+        score.Start();
+        Score = score.Ticks / 1000;
+        SplashKit.DrawTextOnWindow(_GameWindow, Score.ToString(), Color.Black, 100, 50);
         _Player.Draw();
+
+        
         _GameWindow.Refresh(60);
     }
 
     public void Update()
     {
-        if (_Player.CollidedWidth(_TestRobot))
-            _TestRobot = RandomRobot();
+        foreach (Robot robot in _Robot)
+        {
+            robot.Update();
+        }
+
+        if(SplashKit.Rnd() < 0.05)
+        {
+            _Robot.Add(RandomRobot());
+        }
+        CheckCollisions();
+    }
+
+
+    private void CheckCollisions()  
+    {
+        List<Robot> _removedRobots = new List<Robot>(); 
+
+        
+        foreach(Robot robot in _Robot)
+        {
+            if (_Player.CollidedWith(robot) || robot.Offscreen(_GameWindow))
+            {
+                _removedRobots.Add(robot);
+              
+            }
+
+            if(_Player.CollidedWith(robot))
+            {
+                Lives = Lives - 1;
+            }
+        }
+
+        foreach(Robot robot in _removedRobots)
+        {
+            _Robot.Remove(robot);
+        }
     }
 }
 

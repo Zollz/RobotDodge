@@ -1,5 +1,6 @@
 ﻿using System;
 using SplashKitSDK;
+using System.Collections.Generic;
 
 
 public class Player
@@ -12,6 +13,7 @@ public class Player
     const int Speed = 5;
     const int GAP = 5;
     const int Boost = 20;
+   
 
     public int Width
     {
@@ -31,10 +33,12 @@ public class Player
         Y = (gameWindow.Height - Height) / 2;
     }
 
+  
     public void Draw()
     {
         SplashKit.DrawBitmap(_PlayerBitmap, X, Y);
     }
+
 
     public void HandleMethod()
     {
@@ -96,7 +100,7 @@ public class Player
         }
     }
 
-    public bool CollidedWidth(Robot other)
+    public bool CollidedWith(Robot other)
     {
         { return _PlayerBitmap.CircleCollision(X, Y, other.CollisionCircle); }
     }
