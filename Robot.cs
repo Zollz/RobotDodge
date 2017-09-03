@@ -30,7 +30,7 @@ public class Robot
 
     public Robot(Window gameWindow, Player player)
     {
-        const int Speed = 4;
+        const int Speed = 2;
         MainColor = Color.RandomRGB(200);
 
         if (SplashKit.Rnd() < 0.5)

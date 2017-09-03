@@ -8,7 +8,7 @@ public class RobotDodge
     private Player _Player;
     private Window _GameWindow;
     private Bitmap Life;
-    public double Score;
+    private double Score;
     public int Lives = 5;
     private static List<Robot> _Robot = new List<Robot>();
 
@@ -42,43 +42,13 @@ public class RobotDodge
         {
             robot.Draw();
         }
-        if (Lives == 5)
-        {
-            SplashKit.DrawBitmap(Life, 550, 50);
-            SplashKit.DrawBitmap(Life, 500, 50);
-            SplashKit.DrawBitmap(Life, 450, 50);
-            SplashKit.DrawBitmap(Life, 400, 50);
-            SplashKit.DrawBitmap(Life, 350, 50);
-        }
-        if (Lives == 4)
-        {
-            SplashKit.DrawBitmap(Life, 550, 50);
-            SplashKit.DrawBitmap(Life, 500, 50);
-            SplashKit.DrawBitmap(Life, 450, 50);
-            SplashKit.DrawBitmap(Life, 400, 50);
-        }
-        if (Lives ==3)
-        {
-            SplashKit.DrawBitmap(Life, 550, 50);
-            SplashKit.DrawBitmap(Life, 500, 50);
-            SplashKit.DrawBitmap(Life, 450, 50);
-        }
-        if (Lives == 2)
-        {
-            SplashKit.DrawBitmap(Life, 550, 50);
-            SplashKit.DrawBitmap(Life, 500, 50);
-        }
-        if (Lives == 1)
-        {
-            SplashKit.DrawBitmap(Life, 550, 50);
-        }
-        Timer score = new Timer("Score");
-        score.Start();
-        Score = score.Ticks / 1000;
-        SplashKit.DrawTextOnWindow(_GameWindow, Score.ToString(), Color.Black, 100, 50);
-        _Player.Draw();
 
-        
+        for (int i = 1; i <= Lives; i++)
+        {
+            SplashKit.DrawBitmap(Life, 600 - (i * 50), 50);
+        }
+       
+        _Player.Draw();
         _GameWindow.Refresh(60);
     }
 
@@ -88,6 +58,7 @@ public class RobotDodge
         {
             robot.Update();
         }
+
 
         if(SplashKit.Rnd() < 0.05)
         {
@@ -113,6 +84,11 @@ public class RobotDodge
             if(_Player.CollidedWith(robot))
             {
                 Lives = Lives - 1;
+
+                if(Lives == 0)
+                {
+                    SplashKit.CloseCurrentWindow();
+                }
             }
         }
 
