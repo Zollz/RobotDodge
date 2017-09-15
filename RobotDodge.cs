@@ -8,9 +8,10 @@ public class RobotDodge
     private Player _Player;
     private Window _GameWindow;
     private Bitmap Life;
-    private double Score;
+    private Bullet _Bullet;
     public int Lives = 5;
     private static List<Robot> _Robot = new List<Robot>();
+    public Timer _Score;
 
     public bool Quit
     {
@@ -22,6 +23,8 @@ public class RobotDodge
         _GameWindow = gameWindow;
         _Player = player;
         Life = new Bitmap("Life", "resources/images/heart.png");
+        _Score = new Timer("Score");
+        _Score.Start();
     }
 
     public void HandleInput()
@@ -38,7 +41,7 @@ public class RobotDodge
     {
         _GameWindow.Clear(Color.White);
 
-        foreach(Robot robot in _Robot)
+        foreach (Robot robot in _Robot)
         {
             robot.Draw();
         }
@@ -47,7 +50,7 @@ public class RobotDodge
         {
             SplashKit.DrawBitmap(Life, 600 - (i * 50), 50);
         }
-       
+        SplashKit.DrawTextOnWindow(_GameWindow, Convert.ToString(_Score.Ticks / 1000), Color.Black, 50, 50);
         _Player.Draw();
         _GameWindow.Refresh(60);
     }
@@ -60,7 +63,7 @@ public class RobotDodge
         }
 
 
-        if(SplashKit.Rnd() < 0.05)
+        if (SplashKit.Rnd() < 0.05)
         {
             _Robot.Add(RandomRobot());
         }
@@ -68,31 +71,31 @@ public class RobotDodge
     }
 
 
-    private void CheckCollisions()  
+    private void CheckCollisions()
     {
-        List<Robot> _removedRobots = new List<Robot>(); 
+        List<Robot> _removedRobots = new List<Robot>();
 
-        
-        foreach(Robot robot in _Robot)
+
+        foreach (Robot robot in _Robot)
         {
             if (_Player.CollidedWith(robot) || robot.Offscreen(_GameWindow))
             {
                 _removedRobots.Add(robot);
-              
+
             }
 
-            if(_Player.CollidedWith(robot))
+            if (_Player.CollidedWith(robot))
             {
                 Lives = Lives - 1;
 
-                if(Lives == 0)
+                if (Lives == 0)
                 {
                     SplashKit.CloseCurrentWindow();
                 }
             }
         }
 
-        foreach(Robot robot in _removedRobots)
+        foreach (Robot robot in _removedRobots)
         {
             _Robot.Remove(robot);
         }

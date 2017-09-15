@@ -7,6 +7,7 @@ public class Player
 {
 
     private Bitmap _PlayerBitmap;
+    private Bullet _Bullet;
     public double X { get; private set; }
     public double Y { get; private set; }
     public bool Quit { get; private set; }
@@ -77,6 +78,10 @@ public class Player
         if (SplashKit.KeyTyped(KeyCode.EscapeKey))
         {
             Quit = true;
+        }
+        if (SplashKit.MouseClicked(MouseButton.LeftButton))
+        {
+            _Bullet.Draw();
         }
     }
 
